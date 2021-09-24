@@ -1,0 +1,119 @@
+/* code font */
+/* font-family: 'Roboto Mono', monospace; */
+
+/* sans serif font */
+/* font-family: 'Inter', sans-serif; */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8edeb;
+  /* font-weight: bold; */
+}
+h1,
+h3 {
+  text-align: center;
+}
+
+p input, p textarea {
+  font-family: "Roboto Mono", monospace;
+  border: none;
+  font-weight: bold;
+}
+
+.navsection p textarea {
+  margin-left: -40%;
+}
+
+#q {
+  width: 85%;
+  padding: 8%;
+  background-color: #ffd7ba;
+  margin-bottom: 1%;
+  border-radius: 20px;
+}
+
+.snippet {
+  text-align: left;
+  margin-left: 15vw;
+}
+
+#challenges {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+
+.opencurly,
+.closecurly,
+.openbracket,
+.closebracket,
+.openparen,
+.zero,
+.closeparen,
+.questionmark,
+.semicolon,
+.colon,
+.comma,
+.one  {
+  width: 20px;
+}
+
+
+
+
+.name,
+.default,
+.length,
+.pop,
+.keys {
+  width: 65px;
+}
+
+.Object,
+.person,
+.function,
+.values {
+  width: 70px;
+}
+
+
+.reverse {
+  width: 110px
+}
+
+
+
+.splice {
+  width: 130px;
+}
+.push {
+  width: 150px
+}
+
+.stylesheet,
+.script {
+width: 500px;
+height: 170px
+}
+
+#card{
+  height: 300px;
+  width: 500px;
+}
+
+#navbar {
+  height: 800px;
+  width: 600px;
+  
+}
+
+
+
+.cardsection,
+.navsection {
+  display: flex;
+  flex-direction: row;
+}
+
+
