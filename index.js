@@ -141,20 +141,14 @@ const solved = (e, i) => {
         } else if(e.target.id === 'navbar' ) {
             let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
             let formatted = navbar.split(' ').join('')
+            console.log(formatted)
             if(input === formatted){
                 allInputs[i].style = 'background-color: #caffbf;'
                 navbars.style.display = 'block'
             } else {
                 allInputs[i].style = 'background-color: #ffadad;'
             }
-        }
-        
-        
-        
-        
-        
-        
-         else if(e.target.className === 'bonus1'){
+        } else if(e.target.className === 'bonus1'){
             e.target.value === 'num is less than 10' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
         } else if(e.target.className === 'bonus2') {
             e.target.value === 'true' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
@@ -166,7 +160,7 @@ const solved = (e, i) => {
     }
 }
 
-
+allInputs[i].style = 'background-color: #fafafa;'
 
  for(let i=0; i < allInputs.length; i++) {
     allInputs[i].addEventListener('change', (e) => solved(e, i))
