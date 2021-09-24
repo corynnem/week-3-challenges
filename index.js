@@ -141,7 +141,6 @@ const solved = (e, i) => {
         } else if(e.target.id === 'navbar' ) {
             let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
             let formatted = navbar.split(' ').join('')
-            console.log(formatted)
             if(input === formatted){
                 allInputs[i].style = 'background-color: #caffbf;'
                 navbars.style.display = 'block'
