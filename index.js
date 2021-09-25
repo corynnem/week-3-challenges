@@ -57,7 +57,7 @@ navbars.style.display = 'none'
 
 
 const solved = (e, i) => {
-    if(e.target.value === e.target.className) {
+    if(e.target.value === e.target.className ) {
         allInputs[i].style = 'background-color: #caffbf;'
     } else {
         if(e.target.className === 'opencurly'){
@@ -129,7 +129,6 @@ const solved = (e, i) => {
             let formatted = jsScript.split(' ').join('')
             input === formatted ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
         }  else if(e.target.id === 'card' ) {
-           
             let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
             let formatted = card.split(' ').join('')
             if(input === formatted){
@@ -141,7 +140,9 @@ const solved = (e, i) => {
         } else if(e.target.id === 'navbar' ) {
             let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
             let formatted = navbar.split(' ').join('')
+            console.log('onchange')
             if(input === formatted){
+                console.log(input, formatted)
                 allInputs[i].style = 'background-color: #caffbf;'
                 navbars.style.display = 'block'
             } else {
@@ -159,7 +160,6 @@ const solved = (e, i) => {
     }
 }
 
-allInputs[i].style = 'background-color: #fafafa;'
 
  for(let i=0; i < allInputs.length; i++) {
     allInputs[i].addEventListener('change', (e) => solved(e, i))
