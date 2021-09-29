@@ -20,12 +20,12 @@ p input, p textarea {
   font-weight: bold;
 }
 
-.navsection p textarea {
-  margin-left: -40%;
+.navsection p textarea, .cardsection p textarea {
+  margin-left: -45%;
 }
 
 #q {
-  width: 85%;
+  width: 88%;
   padding: 8%;
   background-color: #ffd7ba;
   margin-bottom: 1%;
@@ -105,7 +105,7 @@ height: 170px
 #navbar {
   height: 800px;
   width: 600px;
-  
+  max-width: 80%;
 }
 
 
@@ -117,3 +117,14 @@ height: 170px
 }
 
 
+.bootstrapcard {
+  margin-left: -14vw;
+} 
+.bootstrapnavbar {
+  margin-left: -18em;
+} 
+
+
+.navbar {
+ max-width: 105%;
+}
