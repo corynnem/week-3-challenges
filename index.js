@@ -1,8 +1,7 @@
-let inputs = document.querySelectorAll('input')
-let textareas = document.querySelectorAll('textarea')
+let inputs = document.querySelectorAll("input");
+let textareas = document.querySelectorAll("textarea");
 
-let allInputs = [...inputs, ...textareas]
-
+let allInputs = [...inputs, ...textareas];
 
 let card = `<div class="card" style="width: 18rem;">
 <img src="..." class="card-img-top" alt="...">
@@ -11,7 +10,7 @@ let card = `<div class="card" style="width: 18rem;">
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   <a href="#" class="btn btn-primary">Go somewhere</a>
 </div>
-</div>`
+</div>`;
 
 let navbar = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -42,130 +41,204 @@ let navbar = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
       </form>
     </div>
   </div>
-</nav>`
+</nav>`;
 
-let cssScript = `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">`
-let jsScript = `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>`
+let cssScript = `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">`;
+let jsScript = `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>`;
 
+let cards = document.querySelector(".bootstrapcard");
+cards.style.display = "none";
 
-let cards = document.querySelector('.bootstrapcard')
-cards.style.display = 'none'
-
-
-let navbars = document.querySelector('.bootstrapnavbar')
-navbars.style.display = 'none'
-
+let navbars = document.querySelector(".bootstrapnavbar");
+navbars.style.display = "none";
 
 const solved = (e, i) => {
-    if(e.target.value === e.target.className ) {
-        allInputs[i].style = 'background-color: #caffbf;'
+  if (e.target.value === e.target.className && e.target.value !== "") {
+    allInputs[i].style = "background-color: #caffbf;";
+  } else if(e.target.value === e.target.id) {
+    allInputs[i].style = "background-color: #caffbf;";
+  } else {
+    if (e.target.className === "opencurly") {
+      e.target.value === "{"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "closecurly") {
+      e.target.value === "}"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "openparen") {
+      e.target.value === "("
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "closeparen") {
+      e.target.value === ")"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "questionmark") {
+      e.target.value === "?"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "colon") {
+      e.target.value === ":"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "semicolon") {
+      e.target.value === ";"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "strictE") {
+      e.target.value === "==="
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "equal") {
+      e.target.value === "=="
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "notEqual") {
+      e.target.value === "!=="
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "greatOrE") {
+      e.target.value === ">="
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "lessOrE") {
+      e.target.value === "<="
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "and") {
+      e.target.value === "&&"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "or") {
+      e.target.value === "||"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "zero") {
+      e.target.value === "0"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "length") {
+      e.target.value === ".length"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "iplusplus") {
+      e.target.value === "i++"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "arrow") {
+      e.target.value === "=>"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "openbracket") {
+      e.target.value === "["
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "closebracket") {
+      e.target.value === "]"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "comma") {
+      e.target.value === ","
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "push") {
+      e.target.value === ".push('Tomato')" || e.target.value === ".push()"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "pop") {
+      e.target.value === ".pop()"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "splice") {
+      e.target.value === ".splice(2, 1)" || e.target.value === ".splice()"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "reverse") {
+      e.target.value === ".reverse()"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "keys") {
+      e.target.value === ".keys"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "values") {
+      e.target.value === ".values"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "one") {
+      e.target.value === "1"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "name") {
+      e.target.value === ".name"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "installBootstrap") {
+      e.target.value === "npm install bootstrap"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "stylesheet") {
+      let input = e.target.value
+        .split(" ")
+        .filter((line) => line !== "" && line !== "\n")
+        .join("");
+      let formatted = cssScript.split(" ").join("");
+      input === formatted
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "script") {
+      let input = e.target.value
+        .split(" ")
+        .filter((line) => line !== "" && line !== "\n")
+        .join("");
+      let formatted = jsScript.split(" ").join("");
+      input === formatted
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.id === "card") {
+      let input = e.target.value
+        .split(" ")
+        .filter((line) => line !== "" && line !== "\n")
+        .join("");
+      let formatted = card.split(" ").join("");
+      if (input === formatted) {
+        allInputs[i].style = "background-color: #caffbf;";
+        cards.style.display = "block";
+      } else {
+        allInputs[i].style = "background-color: #ffadad;";
+      }
+    } else if (e.target.id === "navbar") {
+      let input = e.target.value
+        .split(" ")
+        .filter((line) => line !== "" && line !== "\n")
+        .join("");
+      let formatted = navbar.split(" ").join("");
+      if (input === formatted) {
+        allInputs[i].style = "background-color: #caffbf;";
+        navbars.style.display = "block";
+      } else {
+        allInputs[i].style = "background-color: #ffadad;";
+      }
+    } else if (e.target.className === "bonus1") {
+      e.target.value === "num is less than 10"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "bonus2") {
+      e.target.value === "true"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
+    } else if (e.target.className === "bonus3") {
+      e.target.value === "B"
+        ? (allInputs[i].style = "background-color: #caffbf;")
+        : (allInputs[i].style = "background-color: #ffadad;");
     } else {
-        if(e.target.className === 'opencurly'){
-            e.target.value === '{' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'closecurly') {
-            e.target.value === '}' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'  
-        } else if(e.target.className === 'openparen') {
-            e.target.value === '(' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;' 
-        } else if(e.target.className === 'closeparen') {
-            e.target.value === ')' ? allInputs[i].style = 'background-color: #caffbf;' : allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'questionmark') { 
-            e.target.value === '?' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'colon') {
-            e.target.value === ':' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'semicolon') {
-            e.target.value === ';' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'strictE') {
-            e.target.value === '===' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'equal') {
-            e.target.value === '==' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'notEqual') {
-            e.target.value === '!==' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'greatOrE') {
-            e.target.value === '>=' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'lessOrE') {
-            e.target.value === '<=' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'and') {
-            e.target.value === '&&' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'or') {
-            e.target.value === '||' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'zero') {
-            e.target.value === '0' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'length') {
-            e.target.value === '.length' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        }  else if(e.target.className === 'iplusplus') {
-            e.target.value === 'i++' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        }  else if(e.target.className === 'arrow') {
-            e.target.value === '=>' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'openbracket') {
-            e.target.value === '[' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'closebracket') {
-            e.target.value === ']' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'comma') {
-            e.target.value === ',' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'push' ) {
-            e.target.value === ".push('Tomato')" || e.target.value === ".push()" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'pop' ) {
-            e.target.value === ".pop()"  ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'splice' ) {
-            e.target.value === ".splice(2, 1)" || e.target.value === ".splice()" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'reverse' ) {
-            e.target.value === ".reverse()" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'keys' ) {
-            e.target.value === ".keys" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'values' ) {
-            e.target.value === ".values" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'one' ) {
-            e.target.value === "1" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'name' ) {
-            e.target.value === ".name" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'installBootstrap' ) {
-            e.target.value === "npm install bootstrap" ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'stylesheet' ) {
-            let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
-            let formatted = cssScript.split(' ').join('')
-            input === formatted ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'script' ) {
-            let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
-            let formatted = jsScript.split(' ').join('')
-            input === formatted ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        }  else if(e.target.id === 'card' ) {
-            let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
-            let formatted = card.split(' ').join('')
-            if(input === formatted){
-                allInputs[i].style = 'background-color: #caffbf;'
-                cards.style.display = 'block'
-            } else {
-                allInputs[i].style = 'background-color: #ffadad;'
-            }
-        } else if(e.target.id === 'navbar' ) {
-            let input = e.target.value.split(' ').filter(line =>  line !== '' && line !== '\n').join('')
-            let formatted = navbar.split(' ').join('')
-            console.log('onchange')
-            if(input === formatted){
-                console.log(input, formatted)
-                allInputs[i].style = 'background-color: #caffbf;'
-                navbars.style.display = 'block'
-            } else {
-                allInputs[i].style = 'background-color: #ffadad;'
-            }
-        } else if(e.target.className === 'bonus1'){
-            e.target.value === 'num is less than 10' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'bonus2') {
-            e.target.value === 'true' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else if(e.target.className === 'bonus3') {
-            e.target.value === 'B' ? allInputs[i].style = 'background-color: #caffbf;' :  allInputs[i].style = 'background-color: #ffadad;'
-        } else {
-            allInputs[i].style = 'background-color: #ffadad;'
-        }
+      allInputs[i].style = "background-color: #ffadad;";
     }
+  }
+
+};
+
+for (let i = 0; i < allInputs.length; i++) {
+  allInputs[i].addEventListener("change", (e) => solved(e, i));
 }
-
-
- for(let i=0; i < allInputs.length; i++) {
-    allInputs[i].addEventListener('change', (e) => solved(e, i))
- }
-
-
-
-
- 
