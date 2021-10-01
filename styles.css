@@ -26,11 +26,12 @@ p input, p textarea {
 
 #q {
   width: 88%;
-  padding: 8%;
+  padding: 1%;
   background-color: #ffd7ba;
   margin-bottom: 1%;
   border-radius: 20px;
 }
+
 
 .snippet {
   text-align: left;
