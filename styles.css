@@ -35,7 +35,7 @@ p input, p textarea {
 
 .snippet {
   text-align: left;
-  margin-left: 15vw;
+  margin-left: 20vw;
 }
 
 #challenges {
@@ -99,14 +99,16 @@ height: 170px
 }
 
 #card{
-  height: 300px;
-  width: 500px;
+  height: 500px;
+  width: 400px;
+
 }
 
 #navbar {
   height: 800px;
-  width: 600px;
+  width: 500px;
   max-width: 80%;
+  /* margin-left: .1%; */
 }
 
 
@@ -122,7 +124,7 @@ height: 170px
   margin-left: -14vw;
 } 
 .bootstrapnavbar {
-  margin-left: -18em;
+  margin-left: -13em;
 } 
 
 

@@ -43,8 +43,8 @@ let navbar = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
   </div>
 </nav>`;
 
-let cssScript = `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">`;
-let jsScript = `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>`;
+let cssScript = `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">`;
+let jsScript = `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>`;
 
 let cards = document.querySelector(".bootstrapcard");
 cards.style.display = "none";
@@ -53,9 +53,11 @@ let navbars = document.querySelector(".bootstrapnavbar");
 navbars.style.display = "none";
 
 const solved = (e, i) => {
-  if (e.target.value === e.target.className && e.target.value !== "") {
+  if(e.keyCode === 13 && e.target.className !== 'installBootstrap' && e.target.className !== 'stylesheet' && e.target.className !== 'script' && e.target.id !== 'navbar') {
+    inputs[i + 1].focus()
+} else if (e.target.value === e.target.className && e.target.value.length < 0) {
     allInputs[i].style = "background-color: #caffbf;";
-  } else if(e.target.value === e.target.id) {
+  } else if(e.target.value === e.target.id && e.target.value.length > 0) {
     allInputs[i].style = "background-color: #caffbf;";
   } else {
     if (e.target.className === "opencurly") {
@@ -240,5 +242,5 @@ const solved = (e, i) => {
 };
 
 for (let i = 0; i < allInputs.length; i++) {
-  allInputs[i].addEventListener("change", (e) => solved(e, i));
+  allInputs[i].addEventListener("keyup", (e) => solved(e, i));
 }
